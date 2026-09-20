@@ -1,0 +1,522 @@
+/* =====================================================
+   NEXGEN V2 - ROLE PORTALS & BUSINESS EXPERIENCE
+===================================================== */
+
+.portal-page {
+  padding: 22px 20px 40px;
+  box-sizing: border-box;
+}
+
+.portal-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.portal-eyebrow {
+  display: inline-block;
+  color: #087f8c;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+}
+
+.portal-header h1 {
+  margin: 0;
+  color: #173b43;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.portal-header p,
+.feature-page-subtitle {
+  margin: 7px 0 0;
+  color: #718287;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.portal-avatar {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #087f8c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.verification-banner,
+.demo-admin-banner {
+  display: flex;
+  gap: 10px;
+  padding: 13px;
+  border-radius: 14px;
+  background: #effaf7;
+  border: 1px solid #d9f0eb;
+  margin-bottom: 20px;
+}
+
+.verification-banner > span {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #087f8c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.verification-banner strong,
+.demo-admin-banner strong {
+  display: block;
+  color: #23474f;
+  font-size: 11px;
+}
+
+.verification-banner small,
+.demo-admin-banner span {
+  display: block;
+  color: #718287;
+  font-size: 9px;
+  margin-top: 3px;
+}
+
+.portal-section {
+  margin-bottom: 23px;
+}
+
+.portal-section h2 {
+  margin: 0 0 11px;
+  color: #29464d;
+  font-size: 15px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-heading h2 {
+  margin-bottom: 11px;
+}
+
+.section-heading button {
+  border: none;
+  background: transparent;
+  color: #087f8c;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.metric-card {
+  padding: 15px 12px;
+  background: white;
+  border: 1px solid #e5edef;
+  border-radius: 15px;
+  box-shadow: 0 5px 16px rgba(31, 72, 80, 0.04);
+}
+
+.metric-card strong {
+  display: block;
+  color: #087f8c;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.metric-card span {
+  display: block;
+  color: #718287;
+  font-size: 9px;
+  margin-top: 6px;
+}
+
+.portal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.portal-list-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px;
+  border: 1px solid #e5edef;
+  border-radius: 14px;
+  background: white;
+}
+
+.patient-avatar {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #e4f6f3;
+  color: #087f8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.list-main {
+  min-width: 0;
+  flex: 1;
+}
+
+.list-main strong {
+  display: block;
+  color: #29464d;
+  font-size: 11px;
+}
+
+.list-main span {
+  display: block;
+  color: #7b898e;
+  font-size: 9px;
+  margin-top: 3px;
+}
+
+.status-pill {
+  padding: 5px 7px;
+  border-radius: 8px;
+  font-size: 7px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.status-pill.confirmed {
+  background: #e6f7f1;
+  color: #16805d;
+}
+
+.status-pill.pending {
+  background: #fff5df;
+  color: #956700;
+}
+
+.portal-action-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+}
+
+.portal-action-grid button {
+  padding: 13px 8px;
+  border: 1px solid #e4ecee;
+  border-radius: 12px;
+  background: white;
+  color: #35545b;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.privacy-card,
+.audit-card,
+.enquiry-card,
+.coming-soon-card {
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.privacy-card {
+  background: #f7fafb;
+  border: 1px solid #e7edef;
+}
+
+.privacy-card strong,
+.audit-card strong,
+.enquiry-card strong {
+  display: block;
+  color: #29464d;
+  font-size: 11px;
+}
+
+.privacy-card p,
+.enquiry-card span,
+.audit-card div,
+.coming-soon-card p {
+  color: #748388;
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.enquiry-card {
+  background: white;
+  border: 1px solid #e5edef;
+  margin-bottom: 9px;
+}
+
+.enquiry-card button {
+  margin-top: 9px;
+  border: none;
+  background: transparent;
+  color: #087f8c;
+  padding: 0;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.verification-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.flow-step {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f5f8f9;
+  color: #8a979b;
+  font-size: 9px;
+}
+
+.flow-step.done {
+  background: #e9f7f3;
+  color: #17775f;
+}
+
+.flow-step.current {
+  background: #fff4dc;
+  color: #966800;
+  font-weight: 700;
+}
+
+.demo-note {
+  color: #89969a;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.audit-card {
+  background: #172f36;
+  color: white;
+}
+
+.audit-card strong {
+  color: white;
+  margin-bottom: 9px;
+}
+
+.audit-card div {
+  color: #b9c8cb;
+  padding: 5px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.audit-card div span {
+  margin-right: 10px;
+  color: #70c9c0;
+}
+
+.secondary-portal-button {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #dce7e9;
+  border-radius: 13px;
+  background: white;
+  color: #087f8c;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.portal-bottom-nav {
+  position: sticky;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  margin: 12px -20px 15px;
+  padding: 10px 8px;
+  background: rgba(255,255,255,0.96);
+  border-top: 1px solid #e7edef;
+}
+
+.portal-bottom-nav button {
+  border: none;
+  background: transparent;
+  color: #829095;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.portal-bottom-nav button.active {
+  color: #087f8c;
+}
+
+.back-link {
+  border: none;
+  background: transparent;
+  color: #087f8c;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 0;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.feature-page-title {
+  margin: 0;
+  color: #173b43;
+  font-size: 27px;
+  line-height: 1.25;
+}
+
+.ecosystem-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.ecosystem-step {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  background: white;
+  border: 1px solid #e5edef;
+  border-radius: 15px;
+}
+
+.ecosystem-number {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #e5f7f4;
+  color: #087f8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.ecosystem-step strong {
+  color: #29464d;
+  font-size: 11px;
+}
+
+.ecosystem-step p {
+  margin: 4px 0 0;
+  color: #758489;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.partner-hero {
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #effaf7, #f3f8ff);
+  margin-bottom: 24px;
+}
+
+.partner-hero h1 {
+  margin: 0;
+  color: #173b43;
+  font-size: 27px;
+  line-height: 1.2;
+}
+
+.partner-hero p {
+  color: #65787d;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.partner-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.partner-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.partner-feature {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  background: white;
+  border: 1px solid #e5edef;
+  border-radius: 13px;
+}
+
+.feature-check {
+  width: 25px;
+  height: 25px;
+  border-radius: 8px;
+  background: #e5f7f4;
+  color: #087f8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.partner-feature strong {
+  color: #29464d;
+  font-size: 10px;
+}
+
+.partner-feature p {
+  margin: 3px 0 0;
+  color: #7b898e;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.coming-soon-card {
+  background: #fff9ec;
+  border: 1px solid #f3e4be;
+}
+
+.coming-soon-card > span {
+  color: #9a6a00;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .7px;
+}
+
+.coming-soon-card h2 {
+  color: #604b1b;
+  font-size: 15px;
+  margin: 7px 0;
+}
+
+.coming-soon-card p {
+  margin: 0;
+}
+
+@media (min-width: 700px) {
+  .portal-page {
+    max-width: 720px;
+    margin: auto;
+  }
+}

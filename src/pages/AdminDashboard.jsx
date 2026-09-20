@@ -1,399 +1,110 @@
+import "../App.css";
+
 function AdminDashboard({ onNavigate }) {
+  const metrics = [
+    ["12,450", "Patients"],
+    ["820", "Doctors"],
+    ["145", "Partner Clinics"],
+    ["3,280", "Appointments"],
+    ["86", "New Enquiries"],
+    ["24", "Pending Verifications"],
+  ];
+
+  const verificationItems = [
+    ["Dr. Meera Iyer", "Doctor credential application", "Under Review"],
+    ["Bloom Fertility Centre", "Clinic verification", "Needs Update"],
+    ["Dr. Rohan Sharma", "Professional credentials", "Documents Received"],
+  ];
+
+  const management = [
+    "Patients", "Doctors", "Clinics", "Appointments",
+    "Support", "Analytics", "Payments", "Content", "Settings"
+  ];
+
   return (
     <div className="app-background">
-      <div className="mobile-app">
-
-        {/* -----------------------------
-            HEADER
-        ----------------------------- */}
-
-        <div className="admin-header">
-
+      <div className="mobile-app portal-page">
+        <header className="portal-header">
           <div>
-            <p className="eyebrow">
-              NEXGEN IVF · ADMIN
-            </p>
-
-            <h1>
-              Admin Dashboard
-            </h1>
-
-            <p>
-              Platform overview & operations
-            </p>
+            <span className="portal-eyebrow">NEXGEN ADMIN</span>
+            <h1>Platform Overview</h1>
+            <p>Internal administration and verification workspace.</p>
           </div>
+          <div className="portal-avatar">NA</div>
+        </header>
 
-          <div className="admin-avatar">
-            A
-          </div>
-
+        <div className="demo-admin-banner">
+          <strong>Demo Administration Environment</strong>
+          <span>All metrics and records shown here are fictional prototype data.</span>
         </div>
 
-        {/* -----------------------------
-            PLATFORM STATUS
-        ----------------------------- */}
+        <section className="portal-section">
+          <h2>Platform metrics</h2>
+          <div className="metric-grid admin-metrics">
+            {metrics.map(([value, label]) => (
+              <div className="metric-card" key={label}>
+                <strong>{value}</strong>
+                <span>{label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
 
-        <div className="admin-status-card">
-
-          <div>
-            <span className="admin-status-dot">
-              ●
-            </span>
-
-            <strong>
-              Platform operational
-            </strong>
-
-            <p>
-              All core services are running normally.
-            </p>
+        <section className="portal-section">
+          <div className="section-heading">
+            <h2>Verification centre</h2>
+            <button onClick={() => alert("Demo: open verification queue.")}>View all</button>
           </div>
 
-          <span className="admin-status-label">
-            LIVE
-          </span>
-
-        </div>
-
-        {/* -----------------------------
-            KEY METRICS
-        ----------------------------- */}
-
-        <div className="admin-section">
-
-          <p className="eyebrow">
-            OVERVIEW
-          </p>
-
-          <h2>
-            Platform metrics
-          </h2>
-
-          <div className="admin-stat-grid">
-
-            <div className="admin-stat-card">
-              <span>👥</span>
-              <strong>2,486</strong>
-              <small>Patients</small>
-              <em>+12.4%</em>
-            </div>
-
-            <div className="admin-stat-card">
-              <span>🧑‍⚕️</span>
-              <strong>184</strong>
-              <small>Verified Doctors</small>
-              <em>+8.2%</em>
-            </div>
-
-            <div className="admin-stat-card">
-              <span>🏥</span>
-              <strong>37</strong>
-              <small>Partner Centres</small>
-              <em>+5.7%</em>
-            </div>
-
-            <div className="admin-stat-card">
-              <span>📅</span>
-              <strong>624</strong>
-              <small>Appointments</small>
-              <em>+15.1%</em>
-            </div>
-
+          <div className="verification-flow admin-flow">
+            <div className="flow-step done">Application submitted</div>
+            <div className="flow-step done">Documents received</div>
+            <div className="flow-step current">Under review</div>
+            <div className="flow-step">Verified</div>
+            <div className="flow-step">Needs update</div>
+            <div className="flow-step">Rejected</div>
           </div>
 
-        </div>
-
-        {/* -----------------------------
-            VERIFICATION QUEUE
-        ----------------------------- */}
-
-        <div className="admin-section">
-
-          <div className="admin-section-heading">
-
-            <div>
-              <p className="eyebrow">
-                ACTION REQUIRED
-              </p>
-
-              <h2>
-                Verification queue
-              </h2>
-            </div>
-
-            <span className="admin-count">
-              12
-            </span>
-
+          <div className="portal-list">
+            {verificationItems.map(([name, detail, status]) => (
+              <div className="portal-list-card" key={name}>
+                <div className="patient-avatar">{name.charAt(0)}</div>
+                <div className="list-main">
+                  <strong>{name}</strong>
+                  <span>{detail}</span>
+                </div>
+                <span className="status-pill pending">{status}</span>
+              </div>
+            ))}
           </div>
+        </section>
 
-          <div className="admin-queue-card">
-
-            <div className="admin-queue-icon">
-              🧑‍⚕️
-            </div>
-
-            <div>
-              <strong>
-                Doctor verification
-              </strong>
-
-              <p>
-                8 professional profiles awaiting review
-              </p>
-            </div>
-
-            <button
-              onClick={() =>
-                alert("Demo: Doctor verification queue")
-              }
-            >
-              →
-            </button>
-
+        <section className="portal-section">
+          <h2>Management</h2>
+          <div className="portal-action-grid">
+            {management.map((item) => (
+              <button key={item} onClick={() => alert(`Demo: ${item} management.`)}>
+                {item}
+              </button>
+            ))}
           </div>
+        </section>
 
-          <div className="admin-queue-card">
+        <section className="audit-card">
+          <strong>Audit-log concept</strong>
+          <div><span>09:42</span> Verification status updated — Demo Admin</div>
+          <div><span>09:18</span> Clinic application reviewed — Demo Admin</div>
+          <div><span>08:55</span> Support request assigned — Demo Admin</div>
+        </section>
 
-            <div className="admin-queue-icon">
-              🏥
-            </div>
+        <section className="privacy-card">
+          <strong>Access control</strong>
+          <p>Production administration would use role-based permissions, consent controls, secure authentication and auditable access to sensitive information.</p>
+        </section>
 
-            <div>
-              <strong>
-                Centre verification
-              </strong>
-
-              <p>
-                4 partner applications awaiting review
-              </p>
-            </div>
-
-            <button
-              onClick={() =>
-                alert("Demo: Centre verification queue")
-              }
-            >
-              →
-            </button>
-
-          </div>
-
-        </div>
-
-        {/* -----------------------------
-            RECENT ACTIVITY
-        ----------------------------- */}
-
-        <div className="admin-section">
-
-          <p className="eyebrow">
-            RECENT ACTIVITY
-          </p>
-
-          <h2>
-            Platform activity
-          </h2>
-
-          <div className="admin-activity-card">
-
-            <div className="activity-icon">
-              ✓
-            </div>
-
-            <div>
-              <strong>
-                New partner centre verified
-              </strong>
-
-              <p>
-                Bloom Fertility Centre
-              </p>
-
-              <small>
-                18 minutes ago
-              </small>
-            </div>
-
-          </div>
-
-          <div className="admin-activity-card">
-
-            <div className="activity-icon">
-              +
-            </div>
-
-            <div>
-              <strong>
-                New patient registered
-              </strong>
-
-              <p>
-                Patient account created
-              </p>
-
-              <small>
-                42 minutes ago
-              </small>
-            </div>
-
-          </div>
-
-          <div className="admin-activity-card">
-
-            <div className="activity-icon">
-              📅
-            </div>
-
-            <div>
-              <strong>
-                Appointment completed
-              </strong>
-
-              <p>
-                Specialist consultation
-              </p>
-
-              <small>
-                1 hour ago
-              </small>
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* -----------------------------
-            MANAGEMENT
-        ----------------------------- */}
-
-        <div className="admin-section">
-
-          <p className="eyebrow">
-            MANAGEMENT
-          </p>
-
-          <div className="admin-management-grid">
-
-            <button
-              onClick={() =>
-                alert("Demo: Patient management")
-              }
-            >
-              <span>👥</span>
-              <strong>Patients</strong>
-              <small>Manage users</small>
-            </button>
-
-            <button
-              onClick={() =>
-                alert("Demo: Doctor management")
-              }
-            >
-              <span>🧑‍⚕️</span>
-              <strong>Doctors</strong>
-              <small>Verification</small>
-            </button>
-
-            <button
-              onClick={() =>
-                alert("Demo: Centre management")
-              }
-            >
-              <span>🏥</span>
-              <strong>Centres</strong>
-              <small>Partners</small>
-            </button>
-
-            <button
-              onClick={() =>
-                alert("Demo: Appointment management")
-              }
-            >
-              <span>📅</span>
-              <strong>Appointments</strong>
-              <small>Bookings</small>
-            </button>
-
-            <button
-              onClick={() =>
-                alert("Demo: Analytics")
-              }
-            >
-              <span>📊</span>
-              <strong>Analytics</strong>
-              <small>Platform data</small>
-            </button>
-
-            <button
-              onClick={() =>
-                alert("Demo: Reports")
-              }
-            >
-              <span>📄</span>
-              <strong>Reports</strong>
-              <small>Export data</small>
-            </button>
-
-          </div>
-
-        </div>
-
-        {/* -----------------------------
-            REVENUE
-        ----------------------------- */}
-
-        <div className="admin-revenue-card">
-
-          <div>
-            <p className="eyebrow">
-              THIS MONTH
-            </p>
-
-            <h2>
-              Platform bookings
-            </h2>
-
-            <p>
-              Illustrative prototype metrics
-            </p>
-          </div>
-
-          <strong>
-            ₹18.6L
-          </strong>
-
-        </div>
-
-        {/* -----------------------------
-            DISCLAIMER
-        ----------------------------- */}
-
-        <div className="admin-disclaimer">
-
-          <strong>
-            Admin prototype
-          </strong>
-
-          <p>
-            All metrics, patient records, revenue figures
-            and activity shown in this dashboard are
-            fictional sample data for demonstration.
-          </p>
-
-        </div>
-
-        {/* -----------------------------
-            RETURN
-        ----------------------------- */}
-
-        <button
-          className="clinic-exit-button"
-          onClick={() => onNavigate("home")}
-        >
-          ← Return to Patient App
+        <button className="secondary-portal-button" onClick={() => onNavigate("home")}>
+          Return to Patient App
         </button>
-
       </div>
     </div>
   );

@@ -1,377 +1,107 @@
+import "../App.css";
+
 function PartnerClinic({ onNavigate }) {
+  const doctors = [
+    { name: "Dr. Aishwarya Rao", specialty: "Fertility & IVF Specialist", status: "Active" },
+    { name: "Dr. Kunal Mehta", specialty: "Reproductive Medicine", status: "Active" },
+    { name: "Dr. Meera Iyer", specialty: "Fertility Specialist", status: "Invite pending" },
+  ];
+
   return (
     <div className="app-background">
-      <div className="mobile-app">
-
-        {/* -----------------------------
-            HEADER
-        ----------------------------- */}
-
-        <div className="clinic-dashboard-header">
-
+      <div className="mobile-app portal-page">
+        <header className="portal-header">
           <div>
-            <p className="eyebrow">
-              NEXGEN IVF · PARTNER PORTAL
-            </p>
-
-            <h1>
-              Hope Fertility Centre
-            </h1>
-
-            <p>
-              Bengaluru · Verified Partner
-            </p>
+            <span className="portal-eyebrow">NEXGEN CLINIC PARTNER</span>
+            <h1>Hope Fertility Centre</h1>
+            <p>Clinic administration and partner operations.</p>
           </div>
+          <div className="portal-avatar">HF</div>
+        </header>
 
-          <div className="clinic-status">
-            ● Online
-          </div>
-
-        </div>
-
-        {/* -----------------------------
-            WELCOME
-        ----------------------------- */}
-
-        <div className="clinic-welcome-card">
-
+        <div className="verification-banner">
+          <span>!</span>
           <div>
-            <span>
-              Good morning 👋
-            </span>
-
-            <h2>
-              Clinic dashboard
-            </h2>
-
-            <p>
-              Manage appointments, enquiries and
-              your partner network activity.
-            </p>
+            <strong>Clinic Verification</strong>
+            <small>Demo status: Under Review</small>
           </div>
-
-          <div className="clinic-dashboard-icon">
-            🏥
-          </div>
-
         </div>
 
-        {/* -----------------------------
-            QUICK STATS
-        ----------------------------- */}
+        <section className="portal-section">
+          <h2>Today's overview</h2>
+          <div className="metric-grid">
+            <div className="metric-card"><strong>12</strong><span>Appointments</span></div>
+            <div className="metric-card"><strong>7</strong><span>New Enquiries</span></div>
+            <div className="metric-card"><strong>6</strong><span>Active Doctors</span></div>
+            <div className="metric-card"><strong>84</strong><span>Monthly Bookings</span></div>
+          </div>
+        </section>
 
-        <div className="clinic-stat-grid">
-
-          <div className="clinic-stat-card">
-            <span>📅</span>
-            <strong>18</strong>
-            <small>Appointments</small>
+        <section className="portal-section">
+          <div className="section-heading">
+            <h2>Doctor management</h2>
+            <button onClick={() => alert("Demo: invite doctor.")}>+ Add</button>
           </div>
 
-          <div className="clinic-stat-card">
-            <span>👥</span>
-            <strong>42</strong>
-            <small>New Enquiries</small>
+          <div className="portal-list">
+            {doctors.map((doctor) => (
+              <div className="portal-list-card" key={doctor.name}>
+                <div className="patient-avatar">{doctor.name.split(" ")[1]?.charAt(0) || "D"}</div>
+                <div className="list-main">
+                  <strong>{doctor.name}</strong>
+                  <span>{doctor.specialty}</span>
+                </div>
+                <span className="status-pill confirmed">{doctor.status}</span>
+              </div>
+            ))}
           </div>
+        </section>
 
-          <div className="clinic-stat-card">
-            <span>🧑‍⚕️</span>
-            <strong>6</strong>
-            <small>Doctors</small>
+        <section className="portal-section">
+          <h2>Patient enquiries</h2>
+          <div className="enquiry-card">
+            <strong>Consultation requested</strong>
+            <span>New enquiry · Online consultation</span>
+            <button onClick={() => alert("Demo: enquiry management.")}>Manage enquiry</button>
           </div>
-
-          <div className="clinic-stat-card">
-            <span>₹</span>
-            <strong>₹2.4L</strong>
-            <small>Booking Value</small>
+          <div className="enquiry-card">
+            <strong>Appointment booked</strong>
+            <span>Follow-up requested by patient</span>
+            <button onClick={() => alert("Demo: appointment details.")}>View</button>
           </div>
+        </section>
 
-        </div>
-
-        {/* -----------------------------
-            TODAY
-        ----------------------------- */}
-
-        <div className="clinic-section">
-
-          <div className="clinic-section-heading">
-            <div>
-              <p className="eyebrow">
-                TODAY
-              </p>
-
-              <h2>
-                Upcoming appointments
-              </h2>
-            </div>
-
-            <button
-              onClick={() =>
-                alert("Demo: View all appointments")
-              }
-            >
-              View all
-            </button>
+        <section className="portal-section">
+          <h2>Clinic verification</h2>
+          <div className="verification-flow">
+            <div className="flow-step done">Application submitted</div>
+            <div className="flow-step done">Documents received</div>
+            <div className="flow-step current">Under review</div>
+            <div className="flow-step">Verified / Needs update</div>
           </div>
+          <p className="demo-note">Verification information is fictional demo data and does not represent a completed real-world verification.</p>
+        </section>
 
-          <div className="clinic-appointment-card">
-
-            <div className="clinic-patient-avatar">
-              PS
-            </div>
-
-            <div className="clinic-appointment-info">
-
-              <strong>
-                Priya Sharma
-              </strong>
-
-              <p>
-                Fertility Consultation
-              </p>
-
-              <span>
-                Today · 10:00 AM · Online
-              </span>
-
-            </div>
-
-            <span className="clinic-confirmed">
-              Confirmed
-            </span>
-
+        <section className="portal-section">
+          <h2>Clinic tools</h2>
+          <div className="portal-action-grid">
+            <button onClick={() => alert("Demo: clinic profile.")}>Clinic Profile</button>
+            <button onClick={() => alert("Demo: services.")}>Services</button>
+            <button onClick={() => alert("Demo: availability.")}>Availability</button>
+            <button onClick={() => alert("Demo: analytics.")}>Analytics</button>
+            <button onClick={() => alert("Demo: billing.")}>Billing</button>
+            <button onClick={() => alert("Demo: settings.")}>Settings</button>
           </div>
+        </section>
 
-          <div className="clinic-appointment-card">
+        <section className="privacy-card">
+          <strong>Organization access</strong>
+          <p>Clinic administrators manage clinic operations. Access to sensitive patient information is restricted to authorized workflows and permissions.</p>
+        </section>
 
-            <div className="clinic-patient-avatar">
-              AK
-            </div>
-
-            <div className="clinic-appointment-info">
-
-              <strong>
-                Ananya Kumar
-              </strong>
-
-              <p>
-                IVF Consultation
-              </p>
-
-              <span>
-                Today · 12:00 PM · In-person
-              </span>
-
-            </div>
-
-            <span className="clinic-confirmed">
-              Confirmed
-            </span>
-
-          </div>
-
-        </div>
-
-        {/* -----------------------------
-            LEADS
-        ----------------------------- */}
-
-        <div className="clinic-section">
-
-          <div className="clinic-section-heading">
-
-            <div>
-              <p className="eyebrow">
-                PATIENT ENQUIRIES
-              </p>
-
-              <h2>
-                Recent leads
-              </h2>
-            </div>
-
-            <button
-              onClick={() =>
-                alert("Demo: View all leads")
-              }
-            >
-              View all
-            </button>
-
-          </div>
-
-          <div className="clinic-lead-card">
-
-            <div className="clinic-lead-avatar">
-              RS
-            </div>
-
-            <div>
-              <strong>
-                Rahul & Sneha
-              </strong>
-
-              <p>
-                Interested in fertility consultation
-              </p>
-
-              <small>
-                25 minutes ago
-              </small>
-            </div>
-
-            <button
-              onClick={() =>
-                alert("Demo: Lead details")
-              }
-            >
-              →
-            </button>
-
-          </div>
-
-          <div className="clinic-lead-card">
-
-            <div className="clinic-lead-avatar">
-              MK
-            </div>
-
-            <div>
-              <strong>
-                Meera K.
-              </strong>
-
-              <p>
-                Asked about IVF consultation
-              </p>
-
-              <small>
-                1 hour ago
-              </small>
-            </div>
-
-            <button
-              onClick={() =>
-                alert("Demo: Lead details")
-              }
-            >
-              →
-            </button>
-
-          </div>
-
-        </div>
-
-        {/* -----------------------------
-            PERFORMANCE
-        ----------------------------- */}
-
-        <div className="clinic-performance-card">
-
-          <div>
-            <p className="eyebrow">
-              THIS MONTH
-            </p>
-
-            <h2>
-              Partner performance
-            </h2>
-
-            <p>
-              Booking activity from the Nexgen IVF
-              platform.
-            </p>
-          </div>
-
-          <div className="performance-number">
-            +24%
-          </div>
-
-        </div>
-
-        {/* -----------------------------
-            QUICK ACTIONS
-        ----------------------------- */}
-
-        <div className="clinic-section">
-
-          <p className="eyebrow">
-            QUICK ACTIONS
-          </p>
-
-          <div className="clinic-action-grid">
-
-            <button
-              onClick={() =>
-                alert("Demo: Manage doctors")
-              }
-            >
-              <span>🧑‍⚕️</span>
-              <strong>Doctors</strong>
-              <small>Manage team</small>
-            </button>
-
-            <button
-              onClick={() =>
-                alert("Demo: Clinic profile")
-              }
-            >
-              <span>🏥</span>
-              <strong>Clinic Profile</strong>
-              <small>Update details</small>
-            </button>
-
-            <button
-              onClick={() =>
-                alert("Demo: Reports")
-              }
-            >
-              <span>📊</span>
-              <strong>Reports</strong>
-              <small>View analytics</small>
-            </button>
-
-            <button
-              onClick={() =>
-                alert("Demo: Documents")
-              }
-            >
-              <span>📄</span>
-              <strong>Documents</strong>
-              <small>Manage files</small>
-            </button>
-
-          </div>
-
-        </div>
-
-        {/* -----------------------------
-            FOOTER
-        ----------------------------- */}
-
-        <div className="clinic-disclaimer">
-
-          <strong>
-            Partner portal
-          </strong>
-
-          <p>
-            This is a high-fidelity prototype.
-            Clinic metrics and patient information
-            shown here are fictional sample data.
-          </p>
-
-        </div>
-
-        <button
-          className="clinic-exit-button"
-          onClick={() =>
-            onNavigate("home")
-          }
-        >
-          ← Return to Patient App
+        <button className="secondary-portal-button" onClick={() => onNavigate("home")}>
+          Return to Patient App
         </button>
-
       </div>
     </div>
   );

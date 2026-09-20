@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import "./phase2.css";
 
 // -----------------------------
 // ENTRY SCREENS
@@ -26,6 +27,9 @@ import SecondOpinion from "./pages/SecondOpinion";
 import Appointments from "./pages/Appointments";
 import Documents from "./pages/Documents";
 import Profile from "./pages/Profile";
+import DoctorPortal from "./pages/DoctorPortal";
+import HowNexgenWorks from "./pages/HowNexgenWorks";
+import ForPartners from "./pages/ForPartners";
 
 // -----------------------------
 // PARTNER / ADMIN
@@ -394,6 +398,50 @@ function App() {
       />
     );
   }
+
+  // -----------------------------
+// DOCTOR PORTAL
+// -----------------------------
+
+if (screen === "doctor-portal") {
+  return (
+    <DoctorPortal
+      onNavigate={(page) => {
+        setScreen(page);
+      }}
+    />
+  );
+}
+
+
+// -----------------------------
+// HOW NEXGEN WORKS
+// -----------------------------
+
+if (screen === "how-nexgen-works") {
+  return (
+    <HowNexgenWorks
+      onNavigate={(page) => {
+        setScreen(page);
+      }}
+    />
+  );
+}
+
+
+// -----------------------------
+// FOR CLINICS & DOCTORS
+// -----------------------------
+
+if (screen === "for-partners") {
+  return (
+    <ForPartners
+      onNavigate={(page) => {
+        setScreen(page);
+      }}
+    />
+  );
+}
 
 
   // =====================================================
